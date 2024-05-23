@@ -82,7 +82,7 @@ function takeCommand(message) {
         const finalText = "I found some information for " + message + " on Google";
         speak(finalText);
     }
-    if (query.includes('who created you')) {
+    if (message.includes('who created you')) {
         speak("Sir Anubhav created me to serve you");
       } else if (query.includes('what is your purpose')) {
         speak("My Purpose is to serve you and help in your day to day life");
