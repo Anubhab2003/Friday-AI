@@ -45,6 +45,7 @@ btn.addEventListener('click', () => {
 });
 
 function takeCommand(message) {
+    
     if (message.includes('hey') || message.includes('hello')) {
         speak("Hello Sir, How May I Help You?");
     } else if (message.includes("open google")) {
@@ -81,4 +82,26 @@ function takeCommand(message) {
         const finalText = "I found some information for " + message + " on Google";
         speak(finalText);
     }
+    if (query.includes('who created you')) {
+        speak("Sir Anubhav created me to serve you");
+      } else if (query.includes('what is your purpose')) {
+        speak("My Purpose is to serve you and help in your day to day life");
+      } else if (query.includes('who made you')) {
+        speak("Sir Anubhav created me to serve you");
+      } else if (query.includes('what is your name')) {
+        speak("My name is Friday, I am a Assistance created by Anubhav, I am here to assist you");
+      } else if (query.includes('the time')) {
+        const strTime = new Date().toLocaleTimeString();
+        speak(`Sir, the time is ${strTime}`);
+      } else if (query.includes('check weather')) {
+        engine.say('opening todays weather report sir');
+        engine.runAndWait();
+        webbrowser.open("https://www.accuweather.com");
+      } else if (query.includes('amazon')) {
+        engine.say('sir in a mood of shopping immediately opening amazon');
+        engine.runAndWait();
+        webbrowser.open('https://www.amazon.in/');
+      }
+      
+      
 }
